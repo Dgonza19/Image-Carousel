@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import '../Carousel.css'
 
 function ImageCarousel() {
 
     const imagenes = [
-        { src: 'image1.jpg' },
-        { src: 'image2.jpg' },
-        { src: 'image3.jpg' },
-        { src: 'image4.jpg' }
+        { src: '/image1.jpg' },
+        { src: '/image2.jpg' },
+        { src: '/image3.jpg' },
+        { src: '/image4.jpg' }
 
     ]
 

@@ -1,0 +1,81 @@
+.carousel {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    background-color: #0c20d3;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.carousel-paused-button,
+.carousel-handle-button {
+    background-color: #f04;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 10px;
+}
+
+.carousel-handle-button {
+    background-color: #000;
+}
+
+/* Medium screen adjustments */
+@media (max-width: 768px) {
+    .carousel {
+        width: 100%; /* Expand to full width on smaller screens */
+    }
+
+    .carousel-paused-button,
+    .carousel-handle-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+    .carousel {
+        width: 100%; /* Expand fully for very small screens */
+        padding: 10px;
+    }
+
+    .carousel-image {
+        height: auto; /* Ensure images resize proportionally */
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    .carousel-paused-button,
+    .carousel-handle-button {
+        width: 100%; /* Buttons take full width */
+        margin: 5px 0; /* Space between buttons */
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+}
