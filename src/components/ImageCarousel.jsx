@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import '../Carousel.css'
 
 function ImageCarousel() {
 
     const imagenes = [
-        { src: '/image1.jpg' },
-        { src: '/image2.jpg' },
-        { src: '/image3.jpg' },
-        { src: '/image4.jpg' }
+        { src: 'image1.jpg' },
+        { src: 'image2.jpg' },
+        { src: 'image3.jpg' },
+        { src: 'image4.jpg' }
 
     ]
 
@@ -40,28 +39,28 @@ function ImageCarousel() {
 
     return (
         <div className='carousel'>
-            {
-                imagenes.length > 0 ? (
-                    <div>
-                    <img 
-                        className='carousel-image'
-                        src={imagenes[currentIndex].src} 
-                        alt={`Imagen ${currentIndex + 1}`}
-                    />
+            {imagenes.length > 0 ? (
+                <div>
+                    <div className='carousel-image-container'>
+                        <img
+                            className='carousel-image'
+                            src={imagenes[currentIndex].src}
+                            alt={`Imagen ${currentIndex + 1}`}
+                        />
+                    </div>
                     <div className='button-container'>
-                    <button onClick={handlePrev} className='carousel-handle-button'>Anterior</button>
-                    <button onClick={() => setIsPaused(true)} className='carousel-paused-button'>Pausar</button>
-                    <button onClick={() => setIsPaused(false)} className='carousel-paused-button'>Eliminar</button>
-                    <button onClick={handleNext} className='carousel-handle-button'>Siguiente</button>
+                        <button onClick={handlePrev} className='carousel-handle-button'>Anterior</button>
+                        <button onClick={() => setIsPaused(true)} className='carousel-paused-button'>Pausar</button>
+                        <button onClick={() => setIsPaused(false)} className='carousel-paused-button'>Reanudar</button>
+                        <button onClick={handleNext} className='carousel-handle-button'>Siguiente</button>
                     </div>
                 </div>
-                ) : (
-                    <p>No hay imagenes disponibles</p>
-                )
-                
-            }
+            ) : (
+                <p>No hay imagenes disponibles</p>
+            )}
         </div>
-    )
-};
+    );
+}
+
 
 export default ImageCarousel;
